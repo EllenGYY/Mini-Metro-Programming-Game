@@ -1,0 +1,35 @@
+<html>
+<style>
+    #myMap {
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        background-color: antiquewhite;
+    }
+
+    .metro {
+        width: 50px;
+        height: 20px;
+        position: absolute;
+    }
+</style>
+
+<body>
+
+    <p>
+        <button id="start" onclick="spawnStation();constructLines();">Start Animation</button>
+        <button id="stop" onclick="">Stop Animation</button>
+        <textarea id="textarea"></textarea>
+    </p>
+
+    <div id="myMap">
+        <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
+
+    <script src="StationClass.js"></script>
+    <script src="spawnStations.js"></script>
+    <script src="LineClass.js"></script>
+    <script src="constructLines.js"></script>
+</body>
+
+</html>
