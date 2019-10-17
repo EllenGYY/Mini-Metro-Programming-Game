@@ -1,9 +1,4 @@
-var MAP_WIDTH = 600;
-var MAP_HIEHGT = 600;
-var METRO_WIDTH = 50;
-var METRO_HEIGHT = 20;
-
-var STATION_NUMBER = 20;
+var STATION_NUMBER = 5;
 var CLOSEST_DISTANCE_OF_TWO_STOPS = 60;
 var CLOSEST_DISTANCE_OF_TWO_HUBS = 300;
 var AFFECT_DISTANCE_TO_HUBS = 100;
@@ -13,6 +8,7 @@ var stations = [];
 
 function spawnStation() {
     i = STATION_NUMBER;
+    now = 0;
 
     hub_1_x = Math.round(Math.random() * (MAP_WIDTH - METRO_WIDTH) + METRO_WIDTH / 2);
     hub_1_y = Math.round(Math.random() * (MAP_HIEHGT - METRO_HEIGHT) + METRO_HEIGHT / 2);
@@ -43,12 +39,9 @@ function spawnStation() {
         if (s < 1 / 3) { shape = "circle"; }
         if (s >= 1 / 3 && s < 2 / 3) { shape = "square"; }
         if (s >= 2 / 3) { shape = "triangle"; }
-        var new_station = new Station(x, y, shape);
+        var new_station = new Station(x, y, shape, now);
         new_station.drawStation();
+        now++;
         stations[m] = new_station;
     }
-}
-
-function distance(x_1, y_1, x_2, y_2) {
-    return Math.sqrt((x_1 - x_2) * (x_1 - x_2) + (y_1 - y_2) * (y_1 - y_2));
 }
