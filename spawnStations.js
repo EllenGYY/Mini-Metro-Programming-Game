@@ -1,4 +1,4 @@
-var STATION_NUMBER = 5;
+var STATION_NUMBER = 6;
 var CLOSEST_DISTANCE_OF_TWO_STOPS = 60;
 var CLOSEST_DISTANCE_OF_TWO_HUBS = 300;
 var AFFECT_DISTANCE_TO_HUBS = 100;
@@ -40,7 +40,6 @@ function spawnStation() {
         if (s >= 1 / 3 && s < 2 / 3) { shape = "square"; }
         if (s >= 2 / 3) { shape = "triangle"; }
         var new_station = new Station(x, y, shape, now);
-        new_station.drawStation();
         now++;
         stations[m] = new_station;
     }

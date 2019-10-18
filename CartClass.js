@@ -51,4 +51,8 @@ class Cart {
         this.newmetro.style.left = this.posX + 'px';
         this.newmetro.style.top = this.posY + 'px';
     }
+
+    passenger_deal() {
+
+    }
 }           
