@@ -1,4 +1,3 @@
-
 class Cart {
 
     newmetro;
@@ -7,6 +6,7 @@ class Cart {
     next_station;
     posX;
     posY;
+    passengers;
 
     constructor(line, start, direction) {
         this.line = line;
@@ -52,7 +52,7 @@ class Cart {
         this.newmetro.style.top = this.posY + 'px';
     }
 
-    passenger_deal() {
+    passengers_deal(station) {
 
     }
 }           

@@ -2,6 +2,7 @@ class Station {
 
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
+    passengers = [];
 
     constructor(x, y, shape, number) {
         this.x = x;
@@ -13,7 +14,16 @@ class Station {
     get PosX() { return this.x; }
     get PosY() { return this.y; }
     get Shape() { return this.shape; }
+    get Passengers() { return this.passengers; }
     get Number() { return this.number; }
+
+    SpawnPassengers() {
+        this.passengers[this.passengers.length] = new Passengers();
+    }
+
+    ShowPassengers() {
+
+    }
 
     drawStation() {
         this.ctx.lineWidth = 2;
