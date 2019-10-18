@@ -10,8 +10,8 @@ function spawnStation() {
     i = STATION_NUMBER;
     now = 0;
 
-    hub_1_x = Math.round(Math.random() * (MAP_WIDTH - METRO_WIDTH) + METRO_WIDTH / 2);
-    hub_1_y = Math.round(Math.random() * (MAP_HIEHGT - METRO_HEIGHT) + METRO_HEIGHT / 2);
+    hub_1_x = Math.round(Math.random() * (MAP_WIDTH - METRO_WIDTH - 100) + METRO_WIDTH / 2 + 50);
+    hub_1_y = Math.round(Math.random() * (MAP_HIEHGT - METRO_HEIGHT - 100) + METRO_HEIGHT / 2 + 50);
     far = false;
     while (!far) {
         far = true;
@@ -34,12 +34,7 @@ function spawnStation() {
                 if (Math.random() > CONCENTRATION) { far = false; }
             }
         }
-        var s = Math.random();
-        var shape;
-        if (s < 1 / 3) { shape = "circle"; }
-        if (s >= 1 / 3 && s < 2 / 3) { shape = "square"; }
-        if (s >= 2 / 3) { shape = "triangle"; }
-        var new_station = new Station(x, y, shape, now);
+        var new_station = new Station(x, y, now);
         now++;
         stations[m] = new_station;
     }
