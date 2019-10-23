@@ -47,22 +47,24 @@ class Station {
     }
 
     drawStation() {
-        this.ctx.lineWidth = 2;
+        this.ctx.lineWidth = 5;
         this.ctx.strokeStyle = "black";
-        if (this.shape == "circle") { drawCircle(this.ctx, this.x, this.y, 10, "antiquewhite"); }
-        if (this.shape == "square") { drawSquare(this.ctx, this.x, this.y, 10, "antiquewhite"); }
-        if (this.shape == "triangle") { drawTriangle(this.ctx, this.x, this.y, 10, "antiquewhite"); }
+        if (this.shape == "circle") { drawCircle(this.ctx, this.x, this.y, 8, "antiquewhite"); }
+        if (this.shape == "square") { drawSquare(this.ctx, this.x, this.y, 8, "antiquewhite"); }
+        if (this.shape == "triangle") { drawTriangle(this.ctx, this.x, this.y, 8, "antiquewhite"); }
 
         this.ownDiv = document.createElement("div");
         document.getElementById("myMap").appendChild(this.ownDiv);
         this.ownDiv.setAttribute("class", "blank");
-        this.ownDiv.style.left = 0 + "pt";
-        this.ownDiv.style.right = 0 + "pt";
+        this.ownDiv.style.left = (0.75 * this.x + 10) + "pt";
+        this.ownDiv.style.top = (0.75 * this.y - 10) + "pt";
+
         this.ownCanvas = document.createElement("canvas");
         this.ownDiv.appendChild(this.ownCanvas);
-        this.ownCanvas.width = 100;
-        this.ownCanvas.height = 100;
+        this.ownCanvas.width = 50;
+        this.ownCanvas.height = 50;
         this.ownCtx = this.ownCanvas.getContext("2d");
+
     }
 
 }

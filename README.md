@@ -11,6 +11,6 @@ Metro-Programming-Game
 
 problems:
 
-- passengers will get on a cart whether it will arrive at their target shape or not
-- passengers AI unaware of transfer stations
-- to show the passengers at a station, its background sometimes cover the lines
+- [ ] passengers will get on a cart whether it will arrive at their target shape or not
+- [ ] passengers AI unaware of transfer stations
+- [x] to show the passengers at a station, its background sometimes cover the lines

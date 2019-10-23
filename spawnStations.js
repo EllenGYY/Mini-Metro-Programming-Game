@@ -24,8 +24,8 @@ function spawnStation() {
         far = false;
         while (!far) {
             far = true;
-            x = Math.round(Math.random() * (MAP_WIDTH - METRO_WIDTH) + METRO_WIDTH / 2);
-            y = Math.round(Math.random() * (MAP_HIEHGT - METRO_HEIGHT) + METRO_HEIGHT / 2);
+            x = Math.round(Math.random() * (MAP_WIDTH - METRO_WIDTH - 100) + METRO_WIDTH / 2 + 50);
+            y = Math.round(Math.random() * (MAP_HIEHGT - METRO_HEIGHT - 100) + METRO_HEIGHT / 2 + 50);
             stations.forEach(element => {
                 if (distance(element.PosX, element.PosY, x, y) < CLOSEST_DISTANCE_OF_TWO_STOPS) { far = false; }
             })

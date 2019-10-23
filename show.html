@@ -14,19 +14,17 @@
     }
 
     .blank {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         position: absolute;
     }
 </style>
 
 <body>
 
-    <p>
-        <button id="start" onclick="spawnStation();constructLines();">Start Animation</button>
-        <button id="stop" onclick="">Stop Animation</button>
-        <textarea id="textarea"></textarea>
-    </p>
+    <button id="start" onclick="spawnStation();constructLines();">Start Animation</button>
+    <button id="stop" onclick="">Stop Animation</button>
+    <textarea id="textarea"></textarea>
 
     <div id="myMap">
         <canvas id="canvas" width="600" height="600"></canvas>
