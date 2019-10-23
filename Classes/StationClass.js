@@ -4,6 +4,9 @@ class Station {
     ctx = canvas.getContext("2d");
     shape;
     passengers = [];
+    ownDiv;
+    ownCanvas;
+    ownCtx;
 
     constructor(x, y, number) {
         this.x = x;
@@ -26,10 +29,9 @@ class Station {
     }
 
     showPassengers() {
-        this.ctx.strokeStyle = "antiquewhite";
-        drawSquare(this.ctx, this.x + 39, this.y, 14.5, "antiquewhite");
+        this.ownCtx.clearRect(0, 0, this.ownCanvas.width, this.ownCanvas.height);
         for (i = 0; i < this.passengers.length; i++) {
-            this.passengers[i].drawPassenger(this.ctx, this.x + 20 + (i % 4) * 10, this.y + ((i - i % 4) / 4) * 10, "black");
+            this.passengers[i].drawPassenger(this.ownCtx, 10 + (i % 4) * 8, 10 + ((i - i % 4) / 4) * 8, "black");
         }
     }
 
@@ -50,9 +52,17 @@ class Station {
         if (this.shape == "circle") { drawCircle(this.ctx, this.x, this.y, 10, "antiquewhite"); }
         if (this.shape == "square") { drawSquare(this.ctx, this.x, this.y, 10, "antiquewhite"); }
         if (this.shape == "triangle") { drawTriangle(this.ctx, this.x, this.y, 10, "antiquewhite"); }
-        this.ctx.textAlign = "center";
-        this.ctx.fillStyle = "black";
-        this.ctx.fillText(this.number, this.x, this.y + 4);
+
+        this.ownDiv = document.createElement("div");
+        document.getElementById("myMap").appendChild(this.ownDiv);
+        this.ownDiv.setAttribute("class", "blank");
+        this.ownDiv.style.left = 0 + "pt";
+        this.ownDiv.style.right = 0 + "pt";
+        this.ownCanvas = document.createElement("canvas");
+        this.ownDiv.appendChild(this.ownCanvas);
+        this.ownCanvas.width = 100;
+        this.ownCanvas.height = 100;
+        this.ownCtx = this.ownCanvas.getContext("2d");
     }
 
 }
