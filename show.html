@@ -1,9 +1,9 @@
-<html>
+<!DOCTYPE html>
 <style>
     #myMap {
+        transform: rotate(0deg);
         width: 600px;
         height: 600px;
-        position: absolute;
         background-color: antiquewhite;
     }
 
@@ -21,16 +21,10 @@
 </style>
 
 <body>
-
-    <button id="start" onclick="spawnStation();constructLines();">Start Animation</button>
-    <button id="stop" onclick="">Stop Animation</button>
-    <textarea id="textarea"></textarea>
-
     <div id="myMap">
         <canvas id="canvas" width="600" height="600"></canvas>
     </div>
-
-
+    <button id="start" onclick="spawnStations();constructLines();">Start Animation</button>
     <script src="Classes/StationClass.js"></script>
     <script src="Classes/LineClass.js"></script>
     <script src="Classes/CartClass.js"></script>

@@ -15,7 +15,7 @@ class Line {
     get Number() { return this.number; }
 
     drawLine() {
-        for (i = 0; i < this.StationsOnLine.length - 1; i++) {
+        for (let i = 0; i < this.StationsOnLine.length - 1; i++) {
             this.ctx.beginPath();
             this.ctx.moveTo(this.StationsOnLine[i].PosX, this.StationsOnLine[i].PosY);
             this.ctx.lineTo(this.StationsOnLine[i + 1].PosX, this.StationsOnLine[i + 1].PosY);

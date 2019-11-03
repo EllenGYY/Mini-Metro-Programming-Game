@@ -6,7 +6,7 @@ var CONCENTRATION = 0.3;
 
 var stations = [];
 
-function spawnStation() {
+function spawnStations() {
     i = STATION_NUMBER;
     now = 0;
 

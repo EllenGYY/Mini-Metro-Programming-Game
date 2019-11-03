@@ -10,6 +10,7 @@ function constructLines() {
     new_line = new Line([stations[3], stations[4], stations[5]], "#1D4735", 1);
     new_line.drawLine();
     lines[1] = new_line;
+    stations[0].drawStation();
     stations.forEach(element => {
         element.drawStation();
         element.spawnPassengers();

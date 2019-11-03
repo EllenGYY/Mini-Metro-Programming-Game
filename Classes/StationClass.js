@@ -1,14 +1,8 @@
 class Station {
 
-    canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("2d");
-    shape;
-    passengers = [];
-    ownDiv;
-    ownCanvas;
-    ownCtx;
-
     constructor(x, y, number) {
+        this.canvas = document.getElementById("canvas");
+        this.ctx = canvas.getContext("2d");
         this.x = x;
         this.y = y;
         this.number = number;
@@ -16,8 +10,19 @@ class Station {
         if (s < 1 / 3) { this.shape = "circle"; }
         if (s >= 1 / 3 && s < 2 / 3) { this.shape = "square"; }
         if (s >= 2 / 3) { this.shape = "triangle"; }
+        this.passengers = [];
+        this.ownDiv;
+        this.ownCanvas;
+        this.ownCtx;
     }
 
+    /*
+    * get methods
+    * Posx,Posy position on canvas
+    * Shape shape
+    * Passengers passengers at the station
+    * Number (use for blockly which doesn't support OOP)
+    */
     get PosX() { return this.x; }
     get PosY() { return this.y; }
     get Shape() { return this.shape; }
@@ -30,7 +35,7 @@ class Station {
 
     showPassengers() {
         this.ownCtx.clearRect(0, 0, this.ownCanvas.width, this.ownCanvas.height);
-        for (i = 0; i < this.passengers.length; i++) {
+        for (let i = 0; i < this.passengers.length; i++) {
             this.passengers[i].drawPassenger(this.ownCtx, 10 + (i % 4) * 8, 10 + ((i - i % 4) / 4) * 8, "black");
         }
     }
@@ -56,8 +61,6 @@ class Station {
         this.ownDiv = document.createElement("div");
         document.getElementById("myMap").appendChild(this.ownDiv);
         this.ownDiv.setAttribute("class", "blank");
-        this.ownDiv.style.left = (0.75 * this.x + 10) + "pt";
-        this.ownDiv.style.top = (0.75 * this.y - 10) + "pt";
 
         this.ownCanvas = document.createElement("canvas");
         this.ownDiv.appendChild(this.ownCanvas);
@@ -65,6 +68,7 @@ class Station {
         this.ownCanvas.height = 50;
         this.ownCtx = this.ownCanvas.getContext("2d");
 
+        this.ownDiv.style.left = (this.x + 15) + "px";
+        this.ownDiv.style.top = (this.y - 15) + "px";
     }
-
 }

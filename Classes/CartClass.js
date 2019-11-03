@@ -70,7 +70,7 @@ class Cart {
     passengers_deal_on(station) {
         var temp = this.passengers.length;
         if (6 - temp >= station.Passengers.length) {
-            for (i = 0; i < station.Passengers.length; i++) {
+            for (let i = 0; i < station.Passengers.length; i++) {
                 station.Passengers[i].PassengerStatus = "on";
                 this.passengers[i + temp] = station.Passengers[i];
             }
@@ -101,7 +101,7 @@ class Cart {
 
     showPassengers() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        for (i = 0; i < this.passengers.length; i++) {
+        for (let i = 0; i < this.passengers.length; i++) {
             this.passengers[i].drawPassenger(this.ctx, 10 + (i % 3) * 8, 10 + ((i - i % 3) / 2) * 8, "white");
         }
     }
