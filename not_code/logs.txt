@@ -1,0 +1,9 @@
+2019/10/16: initial submit
+
+2019/10/17: construct stations, lines, carts class
+
+2019/10/18: fundamental metro working 
+
+2019/11/02: to show the passengers at a station without its background covering the lines + minor bugs fixing
+
+2019/12/15: Fully Restructured. Change the way of realizing animation to requestAnimationFrame. Add acceleration and deceleration. 

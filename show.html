@@ -24,16 +24,18 @@
     <div id="myMap">
         <canvas id="canvas" width="600" height="600"></canvas>
     </div>
-    <button id="start" onclick="spawnStations();constructLines();">Start Animation</button>
-    <script src="Classes/StationClass.js"></script>
-    <script src="Classes/LineClass.js"></script>
-    <script src="Classes/CartClass.js"></script>
-    <script src="Classes/PassengerClass.js"></script>
+    <button id="start" onclick="run();">Start Animation</button>
+    <script src="game_model/Classes/CStation.js"></script>
+    <script src="game_model/Classes/CLine.js"></script>
+    <script src="game_model/Classes/CCart.js"></script>
+    <script src="game_model/Classes/CPassenger.js"></script>
+    <script src="game_model/Classes/CPosition.js"></script>
+    <script src="game_model/const_helpfuncs.js"></script>
 
-    <script src="other_funcs.js"></script>
+    <script src="level_run/level1_run.js"></script>
 
-    <script src="spawnStations.js"></script>
-    <script src="constructLines.js"></script>
+    <script src="eval.js"></script>
+
 </body>
 
 </html>
