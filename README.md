@@ -10,6 +10,12 @@ An metro programming game which player controls the behavior of the lines and ca
 
 Fully Restructured. Change the way of realizing animation to requestAnimationFrame. Add acceleration and deceleration. 
 
+12.27.2019:
+
+![](https://i.pinimg.com/originals/43/36/4c/43364c076b551be5ed11fab186addd03.png)
+
+![](https://i.pinimg.com/originals/fb/cb/b5/fbcbb59bf369e2a7ee7200cc4d0791a0.png)
+
 To do:
 
 Game model Logics:
@@ -34,9 +40,9 @@ Game Art:
 Website:
 
 - [ ] the layout of the website
-  - [ ] a textbox for js script for evalling
-    - [ ] maybe use [Ace](https://ace.c9.io/) to improve readability
-  - [ ] a button to start animation
+  - [x] a textbox for js script for evalling
+    - [x] maybe use [Ace](https://ace.c9.io/) to improve readability
+  - [x] a button to start animation
   - [ ] a button for adjusting the animation speed
   - [ ] a label for level rules
   - [ ] a label for API documentation

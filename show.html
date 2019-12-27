@@ -1,5 +1,25 @@
 <!DOCTYPE html>
 <style>
+	.box{
+	  	width: 1500px;
+	  	height: 600px;
+	  	background: darkgray;
+	  	font-size: 0;
+	}
+
+	.left-box{
+		width: 40%;
+  		height: 100%;
+ 		display: inline-block;
+  		background: red;
+	}
+
+	.right-box{
+		width: 60%;
+  		height: 100%;
+ 		display: inline-block;
+	}
+
     #myMap {
         transform: rotate(0deg);
         width: 600px;
@@ -18,13 +38,25 @@
         height: 50px;
         position: absolute;
     }
+
 </style>
 
 <body>
-    <div id="myMap">
-        <canvas id="canvas" width="600" height="600"></canvas>
-    </div>
-    <button id="start" onclick="run();">Start Animation</button>
+	<h4>Mini Metro Programming Game</h4>
+	<label>There will be six stations in random locations with three different shapes. There will be at least one station for each shape. Passengers will appear at constant speed at every stations. They will get on any metro that come to their stops even if the metro doesn't reach their destination. Passengers also don't know about tranferring between lines. When there are more than 8 passengers waiting at a stop, it is considered as overcrowded and you lost the game. The score will be the number of passengers you succeeded in getting them to their destinations.</label>
+	<div class="box">
+		<div class="left-box">
+		    <div id="myMap">
+		        <canvas id="canvas" width="600" height="600"></canvas>
+		    </div>
+		</div>
+
+		<div class="right-box" id="editor"></div>
+	</div>
+	<button onclick="run();submit_js();">Start Animation</button>
+	<button >2x Speed</button>
+	<button >Use Javascript</button>
+
     <script src="game_model/Classes/CStation.js"></script>
     <script src="game_model/Classes/CLine.js"></script>
     <script src="game_model/Classes/CCart.js"></script>
@@ -34,7 +66,46 @@
 
     <script src="level_run/level1_run.js"></script>
 
-    <script src="eval.js"></script>
+    
+	<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+    	var editor = ace.edit("editor");
+    	editor.setTheme("ace/theme/monokai");
+    	editor.session.setMode("ace/mode/javascript");
+    	document.getElementById('editor').style.fontSize='18px';
+    	function submit_js(){
+    		eval(editor.getValue());
+    	}
+	</script>
+
+    <script src="google-blockly/blockly_compressed.js"></script>
+	<script src="google-blockly/blocks_compressed.js"></script>
+	<script src="google-blockly/javascript_compressed.js"></script>
+	<script src="google-blockly/msg/js/en.js"></script>
+
+	<xml id="toolbox" style="display: none">
+	    <block type="controls_if"></block>
+	    <block type="controls_repeat_ext"></block>
+	    <block type="logic_compare"></block>
+	    <block type="math_number"></block>
+	    <block type="math_arithmetic"></block>
+	    <block type="text"></block>
+	    <block type="text_print"></block>
+	</xml>
+
+	<script>
+	    var workspace = Blockly.inject('blocklyDiv',
+	        { toolbox: document.getElementById('toolbox') });
+	    function run_programme() {
+	        var code = Blockly.JavaScript.workspaceToCode(workspace);
+	        document.getElementById('textarea').value = code;
+	        try {
+	            eval(code);
+	        } catch (e) {
+	            alert(e);
+	        }
+	    }
+	</script>   
 
 </body>
 
