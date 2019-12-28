@@ -2,26 +2,22 @@
 
 Metro-Programming-Game
 
-An metro programming game which player controls the behavior of the lines and carts using JavaScript, and hopefully Blocky from Google. Inspired by [Mini Metro](https://dinopoloclub.com/games/mini-metro/) and [Elevator Saga](http://play.elevatorsaga.com/).
+An metro programming game which player controls the behavior of the lines and carts using JavaScript, and Blocky from Google. Inspired by [Mini Metro](https://dinopoloclub.com/games/mini-metro/) and [Elevator Saga](http://play.elevatorsaga.com/).
 
+Because most of the programming games for children now has a distinct target and detailed steps, it is hard for children to think independently and be motivated to work on a better solution once the target is reached. This game is build to improve the open-ended thinking ability of children.
 
+Embeded [Ace](https://github.com/ajaxorg/ace) and [Google Blockly](https://github.com/google/blockly).
 
-12.25.2019:
+Screenshot:
 
-Fully Restructured. Change the way of realizing animation to requestAnimationFrame. Add acceleration and deceleration. 
-
-12.27.2019:
-
-![](https://i.pinimg.com/originals/43/36/4c/43364c076b551be5ed11fab186addd03.png)
-
-![](https://i.pinimg.com/originals/fb/cb/b5/fbcbb59bf369e2a7ee7200cc4d0791a0.png)
+![](https://i.pinimg.com/originals/93/4b/68/934b682b0624028b8b506ba1c5c762c6.png)
 
 To do:
 
 Game model Logics:
 
-- [ ] check wait at station <= 12
-- [ ] count how many people carried
+- [x] check wait at station <= 8
+- [x] count how many people carried
 - [ ] randomize stations generation
 - [ ] passengers AI:
   - [ ] passengers not going on if cannot reach destination
@@ -40,9 +36,17 @@ Game Art:
 Website:
 
 - [ ] the layout of the website
-  - [x] a textbox for js script for evalling
-    - [x] maybe use [Ace](https://ace.c9.io/) to improve readability
+  - [x] a textbox for js script for evaling
+    - [x] use Ace to improve readability
+  - [ ] a blockly editor
   - [x] a button to start animation
+  - [x] a button to stop and clear the map
+  - [ ] a button to pause/resume
   - [ ] a button for adjusting the animation speed
-  - [ ] a label for level rules
-  - [ ] a label for API documentation
+  - [ ] a button to change between js and blockly
+  - [x] a label for level rules
+  - [ ] a link for API documentation
+
+Blockly:
+- [ ] Special Document Design -- not OOP
+- [ ] DIY blocks

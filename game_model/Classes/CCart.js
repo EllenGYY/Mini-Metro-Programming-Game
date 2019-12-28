@@ -15,7 +15,10 @@ class Cart{
     this.canvas.height = this.newmetro.clientHeight;
     this.ctx = this.canvas.getContext("2d");
     this.newmetro.style.backgroundColor = this.line.color;
+    this._aniStop = false;
 	}
+
+  set aniStop(x){this._aniStop = x;}
 
 	operating(){
     let now_duration = 10 * this.line.stations[this.start].position.distance(this.line.stations[this.start + this.direction].position);
@@ -27,7 +30,7 @@ class Cart{
       if (that.start == 0 || that.start == that.line.stations.length - 1){
         that.direction = -that.direction;
       }
-      that.operating()
+      if(!that._aniStop){that.operating();}
     }, now_duration, this);
 	}
 
@@ -72,6 +75,8 @@ class Cart{
     while (i != this.passengers.length) {
         if (this.passengers[i].status == EPstatus.OFF) {
             this.passengers.splice(i, 1);
+            peopleArrived ++;
+            document.getElementById("score").innerHTML = "Running...Score is " + peopleArrived;
             i--;
         }
         i++;
@@ -85,5 +90,9 @@ class Cart{
         this.passengers[i].drawPassenger(this.ctx, new Position(10 + (i % 3) * 8, 10 + ((i - i % 3) / 2) * 8), "white");
     }
   }
-	
+
+  deleteCart(){
+    document.getElementById("myMap").removeChild(this.newmetro);
+  }
+
 }

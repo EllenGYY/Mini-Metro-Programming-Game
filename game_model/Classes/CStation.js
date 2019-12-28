@@ -7,6 +7,7 @@ class Station{
 		this._shape = shape;
 		this._passengers = [];
 		this._lines = [];
+        this.markID;
         this.drawStation();
 	}
 
@@ -49,6 +50,14 @@ class Station{
         this.showPassengers();
     }
 
+    spawnPassengersInterval(){
+        this.markID = setInterval(function (that) {that.spawnPassengers();}, 3000, this);
+    }
+
+    clearPassengersInterval(){
+        clearInterval(this.markID);
+    }
+
     checkPassengers() {
         let i = 0;
         while (i != this._passengers.length) {
@@ -66,6 +75,14 @@ class Station{
         for (let i = 0; i < this._passengers.length; i++) {
             this._passengers[i].drawPassenger(this.ownCtx, new Position(10 + (i % 4) * 8, 10 + ((i - i % 4) / 4) * 8), "black");
         }
+        if(this._passengers.length > 8){
+            level_gameEnd();
+        }
+    }
+
+    deleteDivs(){
+        this.ownDiv.removeChild(this.ownCanvas);
+        document.getElementById("myMap").removeChild(this.ownDiv);
     }
 
 }
